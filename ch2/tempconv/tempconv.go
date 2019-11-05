@@ -1,5 +1,7 @@
 package tempconv
 
+import "fmt"
+
 // Celsius .
 type Celsius float64
 
@@ -13,8 +15,6 @@ const (
 	BoilingC      Celsius = 100
 )
 
-// CToF .
-func CToF(c Celsius) Fahrenheit { return Fahrenheit(c*9/5 + 32) }
+func (c Celsius) String() string { return fmt.Sprintf("%g˚C", c) }
 
-// FToC .
-func FToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
+func (f Fahrenheit) String() string { return fmt.Sprintf("%g˚F", f) }
