@@ -13,7 +13,7 @@ func main() {
 	flag.StringVar(&c, "type", defaultConv, "convert type")
 	flag.Parse()
 
-	args := flag.NFlag()
+	args := flag.Args()
 	fmt.Println(args)
 	fmt.Println(c)
 
