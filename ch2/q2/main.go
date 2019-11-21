@@ -1,8 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
+	"os"
+	"strconv"
 )
 
 const defaultConv = "temp"
@@ -14,7 +17,17 @@ func main() {
 	flag.Parse()
 
 	args := flag.Args()
-	fmt.Println(args)
-	fmt.Println(c)
 
+	if len(args) == 0 {
+		input := bufio.NewScanner(os.Stdin)
+		input.Scan()
+		args = append(args, input.Text())
+	}
+	for _, arg := range args {
+		intInput, err := strconv.Atoi(arg)
+		if err != nil {
+			fmt.Printf("Error: %v", err)
+		}
+		fmt.Println(intInput)
+	}
 }
