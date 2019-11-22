@@ -8,6 +8,7 @@ func init() {
 	}
 }
 
+// PopCount .
 func PopCount(x uint64) int {
 	return int(pc[byte(x>>(0*8))] +
 		pc[pc[byte(x>>(1*8))]] +
